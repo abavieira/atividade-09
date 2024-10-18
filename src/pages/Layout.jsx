@@ -19,6 +19,9 @@ const Layout = () => {
           </ul>
         </nav>
       </header>
+      
+      {/* Linha horizontal entre o cabeçalho e o conteúdo */}
+      <hr style={hrStyle} />
 
       <div style={contentStyle}>
         <Outlet />
@@ -27,33 +30,28 @@ const Layout = () => {
   );
 };
 
-// Estilos atualizados para incluir logo
+// Estilos atualizados para incluir logo no canto superior esquerdo e nav no direito
 const headerStyle = {
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'space-between', // Alterado para space-between
   alignItems: 'center',
-  flexDirection: 'column',
-  padding: '1em 0'
+  padding: '1em 2em', // Ajuste o padding conforme necessário
 };
 
 const logoStyle = {
   fontSize: '2.5em',
   fontWeight: 'bold',
   color: '#333',
-  marginBottom: '0.5em',
-  textTransform: 'uppercase', // Deixa a logo em letras maiúsculas
+  textTransform: 'uppercase',
 };
 
 const navStyle = {
   display: 'flex',
-  justifyContent: 'center',
-  padding: '0.5em 0',
 };
 
 const ulStyle = {
   listStyle: 'none',
   display: 'flex',
-  justifyContent: 'center',
   padding: 0,
   margin: 0
 };
@@ -74,6 +72,13 @@ const contentStyle = {
   alignItems: 'center',
   height: '70vh',
   textAlign: 'center'
+};
+
+// Estilo para a linha horizontal
+const hrStyle = {
+  margin: '0', // Remover margens para alinhamento adequado
+  border: 'none', // Remover borda padrão
+  borderTop: '1px solid #ccc', // Estilo da linha
 };
 
 export default Layout;
